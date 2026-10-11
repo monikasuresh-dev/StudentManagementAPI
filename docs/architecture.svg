@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrErr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b91c1c"/>
+    </marker>
+  </defs>
+  <rect width="960" height="440" fill="#ffffff"/>
+  <text x="480" y="32" text-anchor="middle" font-size="20" font-weight="bold" fill="#0f172a">StudentManagementAPI – Architecture</text>
+
+  <!-- boxes -->
+  <rect x="30" y="90" width="170" height="90" rx="10" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+  <text x="115" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#0c4a6e">Client</text>
+  <text x="115" y="152" text-anchor="middle" font-size="13" fill="#0c4a6e">Swagger UI / browser</text>
+
+  <rect x="260" y="90" width="190" height="90" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+  <text x="355" y="124" text-anchor="middle" font-size="15" font-weight="bold" fill="#14532d">REST Controller</text>
+  <text x="355" y="146" text-anchor="middle" font-size="13" fill="#14532d">StudentController</text>
+  <text x="355" y="164" text-anchor="middle" font-size="12" fill="#14532d">@Valid, status codes</text>
+
+  <rect x="510" y="90" width="190" height="90" rx="10" fill="#fef9c3" stroke="#a16207" stroke-width="2"/>
+  <text x="605" y="124" text-anchor="middle" font-size="15" font-weight="bold" fill="#713f12">Service Layer</text>
+  <text x="605" y="146" text-anchor="middle" font-size="13" fill="#713f12">StudentService</text>
+  <text x="605" y="164" text-anchor="middle" font-size="12" fill="#713f12">CRUD logic</text>
+
+  <rect x="760" y="90" width="170" height="90" rx="10" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
+  <text x="845" y="124" text-anchor="middle" font-size="15" font-weight="bold" fill="#581c87">In-memory store</text>
+  <text x="845" y="146" text-anchor="middle" font-size="13" fill="#581c87">ConcurrentHashMap</text>
+  <text x="845" y="164" text-anchor="middle" font-size="12" fill="#581c87">resets on restart</text>
+
+  <!-- success arrows -->
+  <line x1="200" y1="125" x2="258" y2="125" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="450" y1="125" x2="508" y2="125" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="700" y1="125" x2="758" y2="125" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="758" y1="150" x2="702" y2="150" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="508" y1="150" x2="452" y2="150" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="258" y1="150" x2="202" y2="150" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+
+  <text x="229" y="112" text-anchor="middle" font-size="11" fill="#334155">JSON</text>
+  <text x="229" y="196" text-anchor="middle" font-size="11" fill="#334155">200/201/204</text>
+
+  <!-- exception handler -->
+  <rect x="260" y="290" width="440" height="80" rx="10" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <text x="480" y="324" text-anchor="middle" font-size="15" font-weight="bold" fill="#7f1d1d">GlobalExceptionHandler</text>
+  <text x="480" y="348" text-anchor="middle" font-size="12" fill="#7f1d1d">Turns exceptions into clean JSON errors (no stack traces)</text>
+
+  <!-- error arrows -->
+  <line x1="330" y1="182" x2="330" y2="288" stroke="#b91c1c" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrErr)"/>
+  <text x="322" y="240" text-anchor="end" font-size="11" fill="#b91c1c">validation fails</text>
+  <line x1="630" y1="182" x2="630" y2="288" stroke="#b91c1c" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrErr)"/>
+  <text x="638" y="240" text-anchor="start" font-size="11" fill="#b91c1c">StudentNotFoundException</text>
+  <polyline points="258,330 115,330 115,182" fill="none" stroke="#b91c1c" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrErr)"/>
+  <text x="125" y="318" font-size="11" fill="#b91c1c">400 / 404 + JSON error</text>
+
+  <!-- legend -->
+  <line x1="30" y1="410" x2="70" y2="410" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="80" y="414" font-size="12" fill="#334155">success path</text>
+  <line x1="190" y1="410" x2="230" y2="410" stroke="#b91c1c" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrErr)"/>
+  <text x="240" y="414" font-size="12" fill="#b91c1c">error path</text>
+  <text x="930" y="414" text-anchor="end" font-size="12" fill="#64748b">No database is used.</text>
+</svg>

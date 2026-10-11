@@ -1,0 +1,31 @@
+# Maven build output
+target/
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Keep the Maven wrapper jar/props (needed to build)
+!.mvn/wrapper/maven-wrapper.properties
+
+# Environment variables and local secrets
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+
+# Local IDE and OS files
+.vscode/
+.idea/
